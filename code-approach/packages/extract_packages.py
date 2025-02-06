@@ -1,6 +1,18 @@
 import os
 import re
+import json
+import yaml
 
+def save_data_to_json(packages, filename="packages.json"):
+    """Save package data to a JSON file."""
+    with open(filename, 'w') as f:
+        json.dump(packages, f, indent=4)
+
+
+def save_data_to_yaml(packages, filename="packages.yaml"):
+    """Save package data to a YAML file."""
+    with open(filename, 'w') as f:
+        yaml.dump(packages, f, default_flow_style=False)
 
 def extract_package_info(directory):
     """
